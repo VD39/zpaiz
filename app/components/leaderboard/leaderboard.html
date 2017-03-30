@@ -1,0 +1,44 @@
+<div class="leaderboard">
+
+    <div class="loading-data" ng-if="$ctrl.loading">
+        <div class="sk-fading-circle">
+            <div class="sk-circle1 sk-circle"></div>
+            <div class="sk-circle2 sk-circle"></div>
+            <div class="sk-circle3 sk-circle"></div>
+            <div class="sk-circle4 sk-circle"></div>
+            <div class="sk-circle5 sk-circle"></div>
+            <div class="sk-circle6 sk-circle"></div>
+            <div class="sk-circle7 sk-circle"></div>
+            <div class="sk-circle8 sk-circle"></div>
+            <div class="sk-circle9 sk-circle"></div>
+            <div class="sk-circle10 sk-circle"></div>
+            <div class="sk-circle11 sk-circle"></div>
+            <div class="sk-circle12 sk-circle"></div>
+        </div>
+    </div>
+
+    <div class="no-scores" ng-if="!$ctrl.loading && !$ctrl.topScores.length">
+        <h2>No scores!</h2>
+        <p>There are no scores at the moment. Try <a href="" ui-sref="app.gameplay">playing</a> to get on the score board.</p>
+    </div>
+
+    <table class="table table-responsive table-striped table-bordered table-hover" ng-if="!$ctrl.loading && $ctrl.topScores.length">
+        <thead class="header">
+            <tr>
+                <th>Position</th>
+                <th>Name</th>
+                <th class="score">Word Unmangled</th>
+                <th class="score">Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="score in $ctrl.topScores track by $index">
+                <td>{{ $index + 1 }}</td>
+                <td>{{ score.name }}</td>
+                <td>{{ score.word_count }}</td>
+                <td>{{ score.score }}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>

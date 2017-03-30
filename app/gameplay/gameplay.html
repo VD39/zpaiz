@@ -1,0 +1,76 @@
+<div class="gameplay-page">
+    <div class="jumbotron text-center">
+
+        <div class="loading" ng-if="$ctrl.loading">
+            <div class="sk-fading-circle">
+                <div class="sk-circle1 sk-circle"></div>
+                <div class="sk-circle2 sk-circle"></div>
+                <div class="sk-circle3 sk-circle"></div>
+                <div class="sk-circle4 sk-circle"></div>
+                <div class="sk-circle5 sk-circle"></div>
+                <div class="sk-circle6 sk-circle"></div>
+                <div class="sk-circle7 sk-circle"></div>
+                <div class="sk-circle8 sk-circle"></div>
+                <div class="sk-circle9 sk-circle"></div>
+                <div class="sk-circle10 sk-circle"></div>
+                <div class="sk-circle11 sk-circle"></div>
+                <div class="sk-circle12 sk-circle"></div>
+            </div>
+        </div>
+
+        <div ng-if="!$ctrl.loading && !$ctrl.gameStarted && !$ctrl.complete">
+            <h2 class="enter-name">Enter your name to begin.</h2>
+            <p>Remember you have 40 seconds to unmangle as many words as possible.</p>
+            <form ng-submit="$ctrl.startGame()" class="input-group input-group-lg">
+                <input class="form-control text-center" autofocus ng-model="$ctrl.name" type="text" placeholder="Enter your name here." required>
+                <span class="input-group-btn">
+            <button class="btn btn-primary" type="button" ng-click="$ctrl.startGame()" ng-disabled="!$ctrl.name">Start Game</button>
+            </span>
+            </form>
+        </div>
+
+        <div ng-if="!$ctrl.loading && $ctrl.gameStarted && !$ctrl.complete">
+            <h2 class="text-center">Good Luck {{$ctrl.name}}</h2>
+
+            <div class="row text-uppercase game">
+                <div class="col-xs-12 col-sm-4 text-left">
+                    <h3>Time: <span ng-class="{'warning': $ctrl.warning}">{{$ctrl.time}}</span></h3>
+                </div>
+                <div class="col-xs-12 col-sm-3 text-center">
+                    <h3>Score: <span>{{$ctrl.currentScore}}</span></h3>
+                </div>
+                <div class="col-xs-12 col-sm-5 text-right">
+                    <h3>Word score: <span>{{$ctrl.tempNumber}}/{{$ctrl.maxNumber}}</span></h3>
+                </div>
+            </div>
+
+            <div class="letters-wrapper">
+                <div class="gameplay-letter letters">
+                    <div class="letter" data-ng-repeat="letter in $ctrl.currentWord track by $index">{{letter}}</div>
+                </div>
+            </div>
+
+            <div>
+                <input class="form-control text-center input-lg" autofocus ng-model="$ctrl.userInput" ng-keyUp="$ctrl.checkWord($event)" type="text"
+                    ng-model="userName" placeholder="Type your solution here">
+            </div>
+        </div>
+
+        <div ng-if="!$ctrl.loading && $ctrl.complete">
+            <div class="text-center game">
+                <h1 class="text-uppercase">Game over</h1>
+                <h3 class="text-uppercase">Well done <span>{{$ctrl.name}}</span> your Scored: <span>{{$ctrl.currentScore}}</span></h3>
+                <h3 class="text-uppercase">Words unmangled: <span>{{$ctrl.wordsUnmangled}}</span></h3>
+
+                <div class="row buttons">
+                    <div class="col-xs-12 col-sm-6">
+                        <p><a class="btn btn-lg btn-primary" href="" ui-sref="app.gameplay" data-ui-sref-opts="{reload: true}">Play Again</a></p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <p><a class="btn btn-lg btn-primary" href="" ui-sref="app.leaderboard" data-ui-sref-opts="{reload: true}">Leaderboard</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

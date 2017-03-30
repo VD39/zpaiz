@@ -1,0 +1,35 @@
+.gameplay-page {
+    .gameplay-letter {
+        .letter {
+            width: 65px;
+            height: 65px;
+            line-height: 55px;
+            font-size: 45px;
+        }
+    }
+    .letters-wrapper {
+        margin-top: 35px;
+    }
+    .game h3 {
+        span {
+            color: #66BBCC;
+            &.warning {
+                color: red;
+            }
+        }
+    }
+    .enter-name {
+        margin-bottom: 25px;
+    }
+    .buttons {
+        margin-top: 45px;
+    }
+    @media (max-width: 768px) {
+        .input-group {
+            width: 100%;
+            .input-group-btn {
+                display: inline;
+            }
+        }
+    }
+}

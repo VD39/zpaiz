@@ -1,0 +1,107 @@
+@import "reset";
+body {
+    font-family: "Ubuntu Mono", monospace;
+    font-style: normal;
+    font-weight: 300;
+    color: #000000;
+    background-color: #efefef;
+}
+
+a,
+a:visited,
+a:hover {
+    text-decoration: none;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+ul.bullets {
+    list-style-type: disc;
+    margin-left: 50px;
+}
+
+.with-table {
+    .panel-body {
+        padding: 0;
+    }
+}
+
+#main {
+    margin: 25px 0 75px 0;
+}
+
+@media (max-width: 768px) {
+    .text-left,
+    .text-right {
+        text-align: center;
+    }
+}
+
+input {
+    text-align: center;
+}
+
+
+/*----- Letters -----*/
+
+.letters {
+    display: table;
+    margin: auto;
+    .letter {
+        width: 100px;
+        height: 100px;
+        font-size: 86px;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 10px;
+        float: left;
+        background: #77CCDD;
+        border: 5px solid #66BBCC;
+        color: #ffffff;
+        font-weight: bold;
+        vertical-align: top;
+        line-height: 90px;
+        border-radius: 5px;
+        position: relative;
+    }
+}
+
+
+/*----- Panel -----*/
+
+.panel {
+    border: 1px solid #555555;
+    .panel-heading {
+        background-color: #555555;
+        color: #FFFFFF;
+    }
+}
+
+
+/*----- Button -----*/
+
+.btn-primary {
+    background-color: #77CCDD;
+    border-color: #77CCDD;
+    &:hover:not([disabled]) {
+        background-color: #66BBCC;
+        border-color: #66BBCC;
+    }
+}
+
+@import "./spinner";
+@import "../components/navigation/navigation";
+@import "../components/footer/footer";
+@import "../components/leaderboard/leaderboard";
+@import "../home/home";
+@import "../gameplay/gameplay";

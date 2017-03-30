@@ -1,0 +1,28 @@
+.home-page {
+    .home-page {
+        .jumbotron {
+            .lead {
+                margin-top: 25px;
+            }
+        }
+    }
+    .letters {
+        margin-bottom: 25px;
+        .letter {
+            &:nth-child(2n+1) {
+                -ms-transform: rotate(-7deg);
+                /* IE 9 */
+                -webkit-transform: rotate(-7deg);
+                /* Chrome, Safari, Opera */
+                transform: rotate(-7deg);
+            }
+            &:nth-child(3n+2) {
+                -ms-transform: rotate(3deg);
+                /* IE 9 */
+                -webkit-transform: rotate(3deg);
+                /* Chrome, Safari, Opera */
+                transform: rotate(3deg);
+            }
+        }
+    }
+}
